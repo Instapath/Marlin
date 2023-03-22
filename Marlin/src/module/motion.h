@@ -165,10 +165,16 @@ inline float home_bump_mm(const AxisEnum axis) {
       #if HAS_SOFTWARE_ENDSTOPS
         if (enabled()) switch (axis) {
           case X_AXIS:
+            // TERN_(MIN_SOFTWARE_ENDSTOP_X, min.x = 25);
+            // TERN_(MAX_SOFTWARE_ENDSTOP_X, max.x = 51);
+
             TERN_(MIN_SOFTWARE_ENDSTOP_X, amin = min.x);
             TERN_(MAX_SOFTWARE_ENDSTOP_X, amax = max.x);
             break;
           case Y_AXIS:
+            // TERN_(MIN_SOFTWARE_ENDSTOP_Y, min.y = 25);
+            // TERN_(MAX_SOFTWARE_ENDSTOP_Y, max.y = 51);
+
             TERN_(MIN_SOFTWARE_ENDSTOP_Y, amin = min.y);
             TERN_(MAX_SOFTWARE_ENDSTOP_Y, amax = max.y);
             break;

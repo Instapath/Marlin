@@ -595,6 +595,8 @@ void restore_feedrate_and_scaling() {
     true, false,
     { X_MIN_POS, Y_MIN_POS, Z_MIN_POS },
     { X_MAX_POS, Y_MAX_POS, Z_MAX_POS }
+    // { 25, 25, Z_MIN_POS },
+    // { 51, 51, Z_MAX_POS }
   };
 
   /**

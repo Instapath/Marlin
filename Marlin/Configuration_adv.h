@@ -600,7 +600,7 @@
 
 // If you want endstops to stay on (by default) even when not homing
 // enable this option. Override at any time with M120, M121.
-#define ENDSTOPS_ALWAYS_ON_DEFAULT
+//#define ENDSTOPS_ALWAYS_ON_DEFAULT
 
 // @section extras
 
@@ -737,16 +737,17 @@
  * the position of the toolhead relative to the workspace.
  */
 
-#define SENSORLESS_BACKOFF_MM  { 2, 2 }     // (mm) Backoff from endstops before sensorless homing
+//#define SENSORLESS_BACKOFF_MM  { 2, 2 }     // (mm) Backoff from endstops before sensorless homing
 
-#define HOMING_BUMP_MM      { 2, 2, 0.5 }       // (mm) Backoff from endstops after first bump
-#define HOMING_BUMP_DIVISOR { 2, 2, 2 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
+#define HOMING_BUMP_MM      { 1, 1, 0 }       // (mm) Backoff from endstops after first bump
+#define HOMING_BUMP_DIVISOR { 2, 2, 1 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
-#define HOMING_BACKOFF_POST_MM { 38, 38, 3.75 }  // (mm) Backoff from endstops after homing
 
-//#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
+#define HOMING_BACKOFF_POST_MM { 38, 38, 0 }  // (mm) Backoff from endstops after homing
+
+#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
-//#define HOME_Z_FIRST                        // Home Z first. Requires a Z-MIN endstop (not a probe).
+#define HOME_Z_FIRST                        // Home Z first. Requires a Z-MIN endstop (not a probe).
 //#define CODEPENDENT_XY_HOMING               // If X/Y can't home without homing Y/X first
 
 // @section bltouch
@@ -2487,7 +2488,7 @@
  */
 #if HAS_TRINAMIC_CONFIG
 
-  #define HOLD_MULTIPLIER    0.25  // Scales down the holding current from run current
+  #define HOLD_MULTIPLIER    0.10  // Scales down the holding current from run current
 
   /**
    * Interpolate microsteps to 256
@@ -2532,7 +2533,7 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT       350
+    #define Z_CURRENT       500
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
@@ -3764,10 +3765,18 @@
   //#define INVERT_JOY_Z  // Enable if Z direction is reversed
 
   // Use M119 with JOYSTICK_DEBUG to find reasonable values after connecting:
-  #define JOY_X_LIMITS { 0, 7800-200, 7800+200, 16368 } // min, deadzone start, deadzone end, max
-  #define JOY_Y_LIMITS { 0, 8100-200, 8100+200, 16368 }
-  #define JOY_Z_LIMITS { 0, 8200-200, 8200+200, 16368 }
+  //joy stick 1 (Philly 10k)
+  #define JOY_X_LIMITS { 0, 8645-1000, 8645+1000, 16368 } // min, deadzone start, deadzone end, max
+  #define JOY_Y_LIMITS { 0, 8066-1000, 8066+1000, 16368 }
+  #define JOY_Z_LIMITS { 0, 8081-500, 8081+500, 16368 }
   #define JOYSTICK_DEBUG
+
+  //joy stick 2 (Houston 10k)
+  // #define JOY_X_LIMITS { 0, 8233-1000, 8233+1000, 16368 } // min, deadzone start, deadzone end, max
+  // #define JOY_Y_LIMITS { 0, 7889-1000, 7889+1000, 16368 }
+  // #define JOY_Z_LIMITS { 0, 8262-500, 8262+500, 16368 }
+  // #define JOYSTICK_DEBUG
+
 #endif
 
 /**
