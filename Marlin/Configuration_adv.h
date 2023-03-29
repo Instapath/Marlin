@@ -3765,17 +3765,25 @@
   //#define INVERT_JOY_Z  // Enable if Z direction is reversed
 
   // Use M119 with JOYSTICK_DEBUG to find reasonable values after connecting:
-  //joy stick 1 (Philly 10k)
-  #define JOY_X_LIMITS { 0, 8645-1000, 8645+1000, 16368 } // min, deadzone start, deadzone end, max
-  #define JOY_Y_LIMITS { 0, 8066-1000, 8066+1000, 16368 }
-  #define JOY_Z_LIMITS { 0, 8081-500, 8081+500, 16368 }
-  #define JOYSTICK_DEBUG
+  //joy stick 1 (Philly 10k #1)
+  //#define JOY_X_LIMITS { 0, 8645-1000, 8645+1000, 16368 } // min, deadzone start, deadzone end, max
+  //#define JOY_Y_LIMITS { 0, 8066-1000, 8066+1000, 16368 }
+  //#define JOY_Z_LIMITS { 0, 8081-500, 8081+500, 16368 }
+  //#define JOYSTICK_DEBUG
 
   //joy stick 2 (Houston 10k)
   // #define JOY_X_LIMITS { 0, 8233-1000, 8233+1000, 16368 } // min, deadzone start, deadzone end, max
   // #define JOY_Y_LIMITS { 0, 7889-1000, 7889+1000, 16368 }
   // #define JOY_Z_LIMITS { 0, 8262-500, 8262+500, 16368 }
   // #define JOYSTICK_DEBUG
+
+  //joy stick 2 (Philly 10k#2)
+  #define JOY_X_LIMITS { 0, 8935-1000, 8935+1000, 16368 } // min, deadzone start, deadzone end, max
+  #define JOY_Y_LIMITS { 0, 8018-1000, 8018+1000, 16368 }
+  #define JOY_Z_LIMITS { 0, 7956-500, 7956+500, 16368 }
+  #define JOYSTICK_DEBUG
+
+  
 
 #endif
 
