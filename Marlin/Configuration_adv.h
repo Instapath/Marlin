@@ -3754,6 +3754,7 @@
  * Analog Joystick(s)
  */
 #define JOYSTICK
+extern bool JOYSTICK_ENABLE;
 #if ENABLED(JOYSTICK)
   #define JOY_X_PIN    PA3  // RAMPS: Suggested pin A5  on AUX2
   #define JOY_Y_PIN   PA2  // RAMPS: Suggested pin A10 on AUX2
