@@ -330,6 +330,8 @@ void disable_all_steppers() {
   TERN_(EXTENSIBLE_UI, ExtUI::onSteppersDisabled());
 }
 
+bool JOYSTICK_ENABLE = true;
+
 /**
  * A Print Job exists when the timer is running or SD is printing
  */

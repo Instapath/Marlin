@@ -41,6 +41,9 @@
  * G5: Cubic B-spline
  */
 void GcodeSuite::G5() {
+
+  Serial.println(F("aaaaaaaaaaaaaaaaaaaaa")); 
+  
   if (MOTION_CONDITIONS) {
 
     #if ENABLED(CNC_WORKSPACE_PLANES)
